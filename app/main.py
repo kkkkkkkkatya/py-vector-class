@@ -8,21 +8,21 @@ class Vector:
 
     def __add__(self, other: object) -> object:
         return Vector(
-            x=self.x + other.x,
-            y=self.y + other.y
+            x_point=self.x + other.x,
+            y_poin=self.y + other.y
         )
 
     def __sub__(self, other: object) -> object:
         return Vector(
-            x=self.x - other.x,
-            y=self.y - other.y
+            x_point=self.x - other.x,
+            y_poin=self.y - other.y
         )
 
     def __mul__(self, other: object) -> object | float:
         if isinstance(other, float | int):
             return Vector(
-                x=self.x * other,
-                y=self.y * other
+                x_point=self.x * other,
+                y_poin=self.y * other
             )
         elif isinstance(other, Vector):
             return self.x * other.x + self.y * other.y
@@ -31,8 +31,8 @@ class Vector:
     def create_vector_by_two_points(cls, start_point: tuple,
                                     end_point: tuple) -> object:
         return cls(
-            x=end_point[0] - start_point[0],
-            y=end_point[1] - start_point[1]
+            x_point=end_point[0] - start_point[0],
+            y_poin=end_point[1] - start_point[1]
         )
 
     def get_length(self) -> float:
